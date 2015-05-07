@@ -9,7 +9,7 @@ export default class MyComponent extends React.Component {
   static displayName = "MyComponent"
   static defaultProps = {initialCount: 0}
 
-  state = {count: this.props.initialCount }
+  state = {count: this.props.initialCount}
 
   @autobind
   handleClick() {
