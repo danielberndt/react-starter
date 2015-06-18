@@ -13,7 +13,7 @@ module.exports = {
       {test: /\.jsx?$/, loader: "eslint", include: srcPath}
     ],
     loaders: [
-      {test: /\.jsx?$/, loader: "babel?stage=0&cacheDirectory"},
+      {test: /\.jsx?$/, loader: "babel"},
       {test: /\.less$/, loader: "style!css!postcss!less"},
       {test: /\.css$/, loader: "style!css!postcss"},
       {test: /\.(png|jpg|svg)([\?#].*)?$/, loader: "file?name=[name]-[md5:hash:base62:8].[ext]"},
