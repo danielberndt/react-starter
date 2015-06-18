@@ -14,7 +14,6 @@ module.exports = {
     ],
     loaders: [
       {test: /\.jsx?$/, loader: "babel"},
-      {test: /\.less$/, loader: "style!css!postcss!less"},
       {test: /\.css$/, loader: "style!css!postcss"},
       {test: /\.(png|jpg|svg)([\?#].*)?$/, loader: "file?name=[name]-[md5:hash:base62:8].[ext]"},
       {test: /\.(eot|ttf|woff2?)([\?#].*)?$/, loader: "file?name=[name]-[md5:hash:base62:8].[ext]"}

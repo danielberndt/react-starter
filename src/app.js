@@ -1,5 +1,6 @@
 require("babel-core/polyfill");
-require("./style.less");
+require("normalize.css/normalize.css");
+require("./style.css");
 
 import React from "react";
 import MyComponent from "./my-component";
