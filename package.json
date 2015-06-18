@@ -33,7 +33,6 @@
     "webpack-dev-server": "^1.9.0"
   },
   "dependencies": {
-    "autobind-decorator": "^1.2.0",
     "normalize.css": "^3.0.3",
     "react": "^0.13.3"
   }
