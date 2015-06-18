@@ -4,7 +4,7 @@
   "description": "Setup everything needed to get started with a modern react dev flow",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --content-base src"
+    "start": "webpack-dev-server"
   },
   "keywords": [
     "react",

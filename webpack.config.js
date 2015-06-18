@@ -24,5 +24,12 @@ module.exports = {
   postcss: [require("autoprefixer-core"), require("csswring")],
   resolve: {
     extensions: ["", ".js", ".jsx"]
+  },
+  devServer: {
+    contentBase: srcPath,
+    stats: {
+      chunkModules: false,
+      colors: true
+    }
   }
 };
