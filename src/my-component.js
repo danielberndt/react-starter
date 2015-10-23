@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export default class MyComponent extends React.Component {
-  static displayName = "MyComponent"
+
+  static propTypes = {
+    initialCount: React.PropTypes.number,
+  };
+
   static defaultProps = {initialCount: 0}
 
   state = {count: this.props.initialCount}
