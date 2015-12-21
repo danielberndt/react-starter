@@ -10,7 +10,7 @@ export default class MyComponent extends React.Component {
 
   state = {count: this.props.initialCount}
 
-  handleClick() {
+  handleClick = () => {
     this.setState({count: this.state.count + 1});
   }
 
@@ -18,7 +18,7 @@ export default class MyComponent extends React.Component {
     return (
       <div>
         <div>Clicks: {this.state.count}</div>
-        <button onClick={::this.handleClick}>Add 1</button>
+        <button onClick={this.handleClick}>Add 1</button>
       </div>
     );
   }
