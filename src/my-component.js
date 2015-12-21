@@ -6,12 +6,12 @@ export default class MyComponent extends React.Component {
     initialCount: React.PropTypes.number,
   };
 
-  static defaultProps = {initialCount: 0}
+  static defaultProps = { initialCount: 0 }
 
-  state = {count: this.props.initialCount}
+  state = { count: this.props.initialCount }
 
   handleClick = () => {
-    this.setState({count: this.state.count + 1});
+    this.setState({ count: this.state.count + 1 });
   }
 
   render() {

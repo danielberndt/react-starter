@@ -1,4 +1,5 @@
 var path = require("path");
+var autoprefixer = require("autoprefixer");
 
 var srcPath = path.join(__dirname, "src");
 
@@ -20,7 +21,7 @@ module.exports = {
     ]
   },
   devtool: "eval",
-  postcss: [require("autoprefixer-core"), require("csswring")],
+  postcss: [autoprefixer({browsers: ["last 2 versions"]}), require("csswring")],
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },
