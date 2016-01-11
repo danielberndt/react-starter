@@ -1,24 +1,33 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import HTML5Backend, { NativeTypes } from 'react-dnd-html5-backend';
+import { DropTarget as dropTarget, DragDropContext as dragDropContext } from 'react-dnd';
 
+const fileTarget = {
+  drop(props, monitor) {
+    console.log('dropped', monitor.getItem().files);
+  },
+};
+
+@dragDropContext(HTML5Backend)
+@dropTarget(NativeTypes.FILE, fileTarget, (connect, monitor) => ({
+  connectDropTarget: connect.dropTarget(),
+  isOver: monitor.isOver(),
+  canDrop: monitor.canDrop(),
+}))
 export default class MyComponent extends React.Component {
 
   static propTypes = {
-    initialCount: React.PropTypes.number,
+    connectDropTarget: React.PropTypes.func.isRequired,
+    isOver: React.PropTypes.bool.isRequired,
+    canDrop: React.PropTypes.bool.isRequired,
   };
 
-  static defaultProps = {initialCount: 0}
-
-  state = {count: this.props.initialCount}
-
-  handleClick() {
-    this.setState({count: this.state.count + 1});
-  }
-
   render() {
+    const { connectDropTarget, isOver, canDrop } = this.props;
     return (
-      <div>
-        <div>Clicks: {this.state.count}</div>
-        <button onClick={::this.handleClick}>Add 1</button>
+      <div ref={n => connectDropTarget(ReactDOM.findDOMNode(n))}>
+        <div>Hover here. {isOver ? <b>is over</b> : null} {canDrop ? <b>canDrop</b> : null}</div>
       </div>
     );
   }

@@ -3,9 +3,10 @@ import 'normalize.css/normalize.css';
 import './style.css';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import MyComponent from './my-component';
 
 window.document.addEventListener('DOMContentLoaded', () => {
   const appEl = window.document.getElementById('app');
-  React.render(<MyComponent/>, appEl);
+  ReactDOM.render(<MyComponent/>, appEl);
 });
